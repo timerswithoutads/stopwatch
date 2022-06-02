@@ -8,6 +8,9 @@ function watch_start() {
 
     // Add it as an parameter to the page
     location.href = location.href.replace(/\?start=[0-9]+/g, "") + "?start=" + start_time;
+
+    // Rename the button to "Restart"
+    document.getElementById("watch_startbutton_button").innerHTML = "Restart";
 }
 
 function watch_reset() {
@@ -22,6 +25,9 @@ if (location.href.indexOf("?start=") > -1) {
 
     // Get start time from the url
     var start_time = parseInt(location.href.match(/\?start=([0-9]+)/)[1]);
+
+    // Rename the button to "Restart"
+    document.getElementById("watch_startbutton_button").innerHTML = "Restart";
 }
 
 // If there is a start time, add an interval to the page that updates the time
