@@ -11,6 +11,22 @@
 </head>
 
 <body>
+    <div id="settings_overlay_container">
+        <div id="settings_overlay_inner">
+            <div id="settings_overlay_close" onclick="document.getElementById('settings_overlay_container').style.display = 'none';">
+                <i class="fas fa-times"></i>
+            </div>
+            <div id="settings_overlay_title">
+                <h1>Einstellungen</h1>
+            </div>
+            <div class="settings_overlay_panes">
+                <div class="settings_overlay_pane_lt"></div>
+                <div class="settings_overlay_pane_rt"></div>
+                <div class="settings_overlay_pane_lb"></div>
+                <div class="settings_overlay_pane_rb"></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="stopwatch" id="stopwatch_time">
             00:00:00
@@ -23,7 +39,7 @@
         </div>
     </div>
     <i id="fullscreen" class="fa-solid fa-expand"></i>
-    <i id="settings_icon" class="fa-solid fa-gear"></i>
+    <i id="settings_icon" class="fa-solid fa-gear" onclick="document.getElementById('settings_overlay_container').style.display = 'block';"></i>
     <div id="settings"></div>
     <script src="script.js"></script>
 </body>

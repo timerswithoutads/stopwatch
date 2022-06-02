@@ -103,3 +103,85 @@ Action Buttons
     width: 100%;
     height: 100%;
 }
+
+
+/* 
+Settings Overlay
+*/
+
+#settings_overlay_container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5000;
+    display: none;
+}
+
+#settings_overlay_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 2rem;
+    color: #000000;
+}
+
+#settings_overlay_inner h1 {
+    text-align: center;
+}
+
+.settings_overlay_panes {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    gap: 0.5rem 0.5rem;
+    grid-auto-flow: row;
+    grid-template-areas: "settings_overlay_pane_lt settings_overlay_pane_rt" "settings_overlay_pane_lb settings_overlay_pane_rb";
+    height: calc(100% - 7.5rem);
+    margin: 1rem;
+}
+
+.settings_overlay_panes div {
+    background-color: #000000;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+#settings_overlay_close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2.5rem;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.settings_overlay_pane_lt {
+    grid-area: settings_overlay_pane_lt;
+}
+
+.settings_overlay_pane_rt {
+    grid-area: settings_overlay_pane_rt;
+}
+
+.settings_overlay_pane_lb {
+    grid-area: settings_overlay_pane_lb;
+}
+
+.settings_overlay_pane_rb {
+    grid-area: settings_overlay_pane_rb;
+}
