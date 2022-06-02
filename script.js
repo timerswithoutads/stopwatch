@@ -16,8 +16,13 @@ function watch_reset() {
     location.href = location.href.replace(/\?start=[0-9]+/g, "");
 }
 
-// Get start time from the url
-var start_time = parseInt(location.href.match(/\?start=([0-9]+)/)[1]);
+
+// if location contains ?start=
+if (location.href.indexOf("?start=") > -1) {
+
+    // Get start time from the url
+    var start_time = parseInt(location.href.match(/\?start=([0-9]+)/)[1]);
+}
 
 // If there is a start time, add an interval to the page that updates the time
 if (start_time) {
