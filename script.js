@@ -57,3 +57,53 @@ if (start_time) {
         document.getElementById("stopwatch_time").innerText = time;
     }, 10);
 }
+
+
+// 
+// Action buttons
+// 
+
+
+
+// The full screen button
+
+// Get the full screen button element
+var fullScreenButton = document.getElementById("fullscreen");
+
+// The function to enter full screen
+function enterFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.msRequestFullscreen) { // for IE11 (remove June 15, 2022)
+        element.msRequestFullscreen();
+    } else if (element.webkitRequestFullscreen) { // iOS Safari
+        element.webkitRequestFullscreen();
+    }
+    fullScreenButton.classList = "fa-solid fa-compress"
+}
+
+// The function to exit full screen
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+    fullScreenButton.classList = "fa-solid fa-expand"
+}
+
+// Add event listener click
+fullScreenButton.addEventListener("click", function() {
+
+    // Check if the browser is in full screen mode
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+
+        // If not, enter full screen mode
+        enterFullscreen(document.documentElement);
+
+    } else {
+
+        // If yes, exit full screen mode
+        exitFullscreen();
+    }
+});
