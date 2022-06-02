@@ -65,6 +65,7 @@ Main grid
     border-radius: 2rem;
     cursor: pointer;
     font-size: 300%;
+    text-transform: uppercase;
 }
 
 
