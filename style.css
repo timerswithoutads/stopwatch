@@ -4,25 +4,73 @@
 body {
     background: linear-gradient(90deg, rgba(34, 195, 128, 1) 0%, rgba(149, 28, 171, 1) 100%);
     color: white;
-    font-family: 'Quicksand', sans-serif;
 }
 
 body>#countdown {
+    transition: 5s;
+    cursor: default;
+}
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/*
+Main grid
+*/
+
+.container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* background: rgba(0, 0, 0, 0.5); */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 60% 20% 10%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". ." "stopwatch stopwatch" "watch_startbutton watch_resetbutton" ". .";
+}
+
+.stopwatch {
+    grid-area: stopwatch;
+    font-size: 15vmax;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25vmin;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    transition: 5s;
-    cursor: default;
 }
+
+.watch_startbutton {
+    grid-area: watch_startbutton;
+}
+
+.watch_resetbutton {
+    grid-area: watch_resetbutton;
+}
+
+.watch_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch_buttons>button {
+    width: 80%;
+    height: 75%;
+    background-color: #282c36;
+    color: #ffffff;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 300%;
+}
+
+
+/* 
+Action Buttons
+*/
 
 #settings_icon {
     position: fixed;
