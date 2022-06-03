@@ -19,6 +19,15 @@ function watch_reset() {
     location.href = location.href.replace(/\?start=[0-9]+/g, "");
 }
 
+// Add event listener for actions
+document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 32) {
+        watch_start();
+    } else if (e.keyCode == 82) {
+        watch_reset();
+    }
+});
+
 
 // if location contains ?start=
 if (location.href.indexOf("?start=") > -1) {
@@ -68,8 +77,6 @@ if (start_time) {
 // 
 // Action buttons
 // 
-
-
 
 // The full screen button
 
