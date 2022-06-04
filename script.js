@@ -28,7 +28,6 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-
 // if location contains ?start=
 if (location.href.indexOf("?start=") > -1) {
 
@@ -71,6 +70,24 @@ if (start_time) {
         // Set the time
         document.getElementById("stopwatch_time").innerText = time;
     }, 10);
+}
+
+// 
+// Settings
+// 
+
+// if location contains ?settings=
+if (location.href.indexOf("?settings=") > -1) {
+
+    // Get settings from the url
+    var settings = location.href.match(/\?settings=([0-9]+)/)[1];
+
+    // Check if the settings are 4 numbers long
+    if (settings.length != 4) {
+
+        // If not, set the settings to 0000
+        location.href = location.href.replace(/\?settings=[0-9]+/g, "?settings=1000");
+    }
 }
 
 
