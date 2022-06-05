@@ -157,6 +157,7 @@ Settings Overlay
     justify-content: center;
     color: #ffffff;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
 #settings_overlay_close {
