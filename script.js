@@ -79,8 +79,12 @@ if (start_time) {
 // if location contains ?settings=
 if (location.href.indexOf("?settings=") > -1) {
 
+    console.log("MÖÖÖH");
+
     // Get settings from the url
     var settings = location.href.match(/\?settings=([0-9]+)/)[1];
+
+    console.log(settings);
 
     // Check if the settings are 4 numbers long
     if (settings.length != 4) {
@@ -90,6 +94,30 @@ if (location.href.indexOf("?settings=") > -1) {
     }
 }
 
+if (settings.substr(0, 1) == "1") {
+    document.getElementById("settings_1").style.backgroundColor = "#880000";
+    document.getElementById("main_container").style.gridTemplateRows = "0% 100% 0% 0%";
+} else {
+    document.getElementById("settings_1").style.backgroundColor = "#008800";
+}
+
+function switchSetting(setting) {
+    switch (setting) {
+        case 1:
+            if (settings.substr(0, 1) == "1") {
+                location.href = location.href.replace(/\?settings=[0-9]+/g, "?settings=0" + settings.substr(1, 3));
+            } else {
+                location.href = location.href.replace(/\?settings=[0-9]+/g, "?settings=1" + settings.substr(1, 3));
+            }
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+    }
+}
 
 // 
 // Action buttons

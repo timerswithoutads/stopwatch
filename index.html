@@ -20,14 +20,14 @@
                 <h1>Einstellungen</h1>
             </div>
             <div class="settings_overlay_panes">
-                <div class="settings_overlay_pane_lt"></div>
-                <div class="settings_overlay_pane_rt"></div>
-                <div class="settings_overlay_pane_lb"></div>
-                <div class="settings_overlay_pane_rb"></div>
+                <div id="settings_1" onclick="switchSetting(1)" class="settings_overlay_pane_lt">Start/Reset buttons</div>
+                <div id="settings_2" class="settings_overlay_pane_rt"></div>
+                <div id="settings_3" class="settings_overlay_pane_lb"></div>
+                <div id="settings_4" class="settings_overlay_pane_rb"></div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="main_container">
         <div class="stopwatch" id="stopwatch_time">
             00:00:00
         </div>
