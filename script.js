@@ -1,3 +1,15 @@
+// 
+// Variables
+// 
+
+var show_millis = true;
+
+
+// 
+// Functions
+// 
+
+
 function watch_start() {
 
     // Get current time
@@ -59,13 +71,18 @@ if (start_time) {
         // Get the full seconds
         var seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
+        // Get the full milliseconds
+        var milliseconds = Math.floor((diff % (1000 * 60)) / 100);
+
         // Add leading zeros 
-        seconds = (seconds < 10) ? "0" + seconds : seconds;
-        minutes = (minutes < 10) ? "0" + minutes : minutes;
         hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+        milliseconds = (milliseconds < 10) ? "0" + milliseconds : milliseconds;
 
         // Create a string with the time
         var time = hours + ":" + minutes + ":" + seconds;
+        if (show_millis) time = time + "." + milliseconds;
 
         // Set the time
         document.getElementById("stopwatch_time").innerText = time;
